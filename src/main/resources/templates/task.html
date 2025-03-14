@@ -1,0 +1,12 @@
+<div th:fragment="task(task)">
+    <div class="task" th:id="'task-' + ${task.id}">
+        <h2 th:text="${task.title}"></h2>
+        <p th:text="${task.description}"></p>
+        <p th:text="${task.dueDate}"></p>
+        <button th:text="${task.status ? 'Abgeschlossen' : 'Offen'}" th:hx-put="'/toggle/' + ${task.id}" th:hx-target="'#task-' + ${task.id}" hx-swap="outerHTML"></button>
+        <button th:hx-delete="'/delete/' + ${task.id}" th:hx-target="'#task-' + ${task.id}" hx-swap="outerHTML">Löschen</button>
+        <button th:hx-get="'/edit/' + ${task.id}"
+                th:hx-target="'#task-' + ${task.id}"
+                hx-swap="outerHTML">Bearbeiten</button>
+    </div>
+</div>
