@@ -19,7 +19,8 @@
     "appId": "mt.electron.regio",
     "productName": "Regio",
     "win": {
-      "target": "portable"
+      "target": "portable",
+      "icon": "icon.png"
     }
   }
 }
