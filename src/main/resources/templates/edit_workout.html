@@ -5,11 +5,12 @@
     <title>Edit Workout</title>
     <script th:src="@{/htmx.min.js}" defer></script>
 
+    <link rel="stylesheet" type="text/css" href="style.css" th:href="@{/style.css}">
 </head>
 <body>
 <header><a href="/">Back</a></header>
 <h1>Edit Workout</h1>
-<form  hx-post="/workout" hx-target="#workouts" hx-swap="afterend" class="mt-4">
+<form  hx-post="/workout" class="mt-4">
     <div>
         <label for="id">Id</label>
         <input type="text" name="id" id="id" readonly required th:value="${workout.id}" disabled>

@@ -1,0 +1,6 @@
+<div style="display: flex; width: 100%; gap: 20px" th:fragment="template(template)" th:id="'template-' + ${template.id}">
+   <h2 th:text="${template.name}"></h2>
+    <button th:hx-delete="'/template/' + ${template.id}"
+    th:hx-target="'#template-' + ${template.id}"
+    hx-swap="outerHTML">Delete</button>
+</div>

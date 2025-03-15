@@ -1,13 +1,19 @@
+<!-- src/main/resources/templates/templates.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Templates</title>
     <script th:src="@{/htmx.min.js}" defer></script>
-
+    <link rel="stylesheet" type="text/css" href="style.css" th:href="@{/style.css}">
 </head>
 <body>
 <header><a href="/">Back</a></header>
 <h1>Templates</h1>
+<div th:each="template : ${templates}" id="templates">
+   <div th:replace="template :: template(${template})"></div>
+</div>
+
+<a href="/add_template"><button>Add</button></a>
 </body>
 </html>
