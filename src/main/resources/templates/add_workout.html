@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Workout</title>
+    <script th:src="@{/htmx.min.js}" defer></script>
+
+</head>
+<body>
+
+<a href="/">Back</a>
+<h1>Add Workout</h1>
+<form  hx-post="/workout" hx-target="#workouts" hx-swap="afterend" class="mt-4">
+    <div class="mb-4">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-4">
+        <label for="startTime" class="form-label">Start time</label>
+        <input type="datetime-local" class="form-control" id="startTime" name="startTime" required>
+    </div>
+    <div class="mb-4">
+        <label for="endTime" class="form-label">End time</label>
+        <input type="datetime-local" class="form-control" id="endTime" name="endTime" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+</body>
+</html>

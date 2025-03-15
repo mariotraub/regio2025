@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercises</title>
+    <script th:src="@{/htmx.min.js}" defer></script>
+
+</head>
+<body>
+<header>
+    <a href="/">Back</a>
+</header>
+    <h1>Exercises</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="exercise : ${exercises}" id="exercises">
+        <div th:replace="exercise :: exercise(${exercise})"></div>
+    </tr>
+</table>
+</body>
+</html>

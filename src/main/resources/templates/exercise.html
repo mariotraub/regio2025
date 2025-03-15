@@ -1,0 +1,14 @@
+<tr th:fragment="exercise(exercise)" th:id="'exercise-' + ${exercise.id}">
+    <td th:text="${exercise.name}"></td>
+    <td th:text="${exercise.type}"></td>
+    <td>
+        <button th:hx-get="'/edit/' + ${exercise.id}"
+                th:hx-target="'#edit-exercise-' + ${exercise.id}"
+                hx-swap="outerHTML">Edit
+        </button>
+        <button th:hx-delete="'/exercise/' + ${exercise.id}"
+                th:hx-target="'#exercise-' + ${exercise.id}"
+                hx-swap="outerHTML">Delete
+        </button>
+    </td>
+</tr>

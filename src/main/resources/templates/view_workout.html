@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Workout</title>
+  <script th:src="@{/htmx.min.js}" defer></script>
+
+</head>
+<body>
+<header><a href="/">Back</a></header>
+<h1>View Workout</h1>
+<div th:replace="workout :: workout(${workout})"></div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<tr th:fragment="workout(workout)" th:id="'workout-' + ${workout.id}">
+        <td th:text="${workout.name}"></td>
+        <td th:text="${workout.formattedStartTime}"></td>
+        <td th:text="${workout.formattedEndTime}"></td>
+        <td th:text="${workout.duration}"></td>
+        <td>
+
+            <a th:href="'/edit_workout/' + ${workout.id}"><button>Edit</button></a>
+            <button th:hx-delete="'/workout/' + ${workout.id}"
+                    th:hx-target="'#workout-' + ${workout.id}"
+                    hx-swap="outerHTML">Delete
+            </button>
+            <a th:href="'/view_workout/' + ${workout.id}"><button>View</button></a>
+        </td>
+</tr>

@@ -8,38 +8,20 @@
     <link rel="icon" href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn3.iconfinder.com%2Fdata%2Ficons%2Funiversal-web-mobile-5-8%2F65%2F236-512.png&f=1&nofb=1&ipt=8daeee15323d5a7df93645c1f89e24dfa5e24a2803bc5533cc59ce7e1c86300a&ipo=images">
 </head>
 <body>
-<h1>Task-Liste</h1>
-
-<div id="tasks">
-    <div th:each="task : ${tasks}">
-        <div th:replace="~{task :: task(task=${task})}"></div>
-    </div>
-</div>
-
-<h2>Neuen Task erstellen</h2>
-<form id="task-form" hx-post="/" hx-target="#tasks" hx-swap="beforeend" name="task">
-    <div>
-        <label for="title">Titel</label>
-        <input type="text" id="title" name="title" required maxlength="50">
-    </div>
-
-    <div>
-        <label for="description">Beschreibung</label>
-        <textarea id="description" name="description" maxlength="255"></textarea>
-    </div>
-
-    <div>
-        <label for="due_date">Fälligkeitsdatum</label>
-        <input type="date" id="due_date" name="due_date">
-    </div>
-
-    <div>
-        <label for="status">Status (Abgeschlossen)</label>
-        <input type="checkbox" id="status" name="status">
-    </div>
-
-    <button type="submit">Task erstellen</button>
-</form>
-
+<header><a href="/exercises">Exercises</a>  <a href="templates">Templates</a> </header>
+<h1>Your latest Workouts</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Duration</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="workout : ${workouts}" id="workouts">
+        <div th:replace="workout :: workout(${workout})"></div>
+    </tr>
+</table>
+<a href="add_workout">Add Workout</a>
 </body>
 </html>

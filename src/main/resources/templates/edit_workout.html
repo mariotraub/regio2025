@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Workout</title>
+    <script th:src="@{/htmx.min.js}" defer></script>
+
+</head>
+<body>
+<header><a href="/">Back</a></header>
+<h1>Edit Workout</h1>
+<form  hx-post="/workout" hx-target="#workouts" hx-swap="afterend" class="mt-4">
+    <div>
+        <label for="id">Id</label>
+        <input type="text" name="id" id="id" readonly required th:value="${workout.id}" disabled>
+    </div>
+    <div class="mb-4">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required th:value="${workout.name}">
+    </div>
+    <div class="mb-4">
+        <label for="startTime" class="form-label">Start time</label>
+        <input type="datetime-local" class="form-control" id="startTime" name="startTime" required th:value="${workout.startTime}">
+    </div>
+    <div class="mb-4">
+        <label for="endTime" class="form-label">End time</label>
+        <input type="datetime-local" class="form-control" id="endTime" name="endTime" required th:value="${workout.endTime}">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+</body>
+</html>
